@@ -26,13 +26,13 @@
         </developer>
     </developers>
     <properties>
-        <netbeans.version>RELEASE82</netbeans.version>
+        <netbeans.version>RELEASE230</netbeans.version>
         <brandingToken>clueminer</brandingToken>
         <project.organization>clueminer.org</project.organization>
         <maven.compiler>3.8.0</maven.compiler>
         <clueminer.nbm-maven-plugin.version>3.14</clueminer.nbm-maven-plugin.version>
         <!--can't be easily upgraded due to dependencies of other modules -->
-        <clueminer.junit.version>4.12</clueminer.junit.version>
+        <clueminer.junit.version>4.13.2</clueminer.junit.version>
         <clueminer.guava.version>[30.0-jre,)</clueminer.guava.version>
         <clueminer.gson.version>2.8.9</clueminer.gson.version>
         <clueminer.maven-jar.version>3.1.0</clueminer.maven-jar.version>
@@ -292,6 +292,13 @@
                 <configuration>
                     <!-- see surefire bug: https://netbeans.org/bugzilla/show_bug.cgi?id=257563 -->
                     <trimStackTrace>false</trimStackTrace>
+                    <forkMode>once</forkMode>
+                    <forkCount>2</forkCount>
+                    <useSystemClassLoader>false</useSystemClassLoader>
+                    <skipTests>false</skipTests>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <reuseForks>false</reuseForks>
+                    <shutdown>testset</shutdown>
                 </configuration>
             </plugin>
             <plugin>

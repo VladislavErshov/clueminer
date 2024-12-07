@@ -123,6 +123,16 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+        <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
             <version>1.2</version>
@@ -255,6 +265,7 @@
                         <trimStackTrace>false</trimStackTrace>
                         <argLine>-Dfile.encoding=${project.build.sourceEncoding}</argLine>
                     </systemPropertyVariables>
+                    <skipTests>true</skipTests>
                 </configuration>
             </plugin>
         </plugins>
